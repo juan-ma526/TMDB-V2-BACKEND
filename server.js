@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const db = require("./config/db");
 const model = require("./models");
-/*const routes = require("./routes"); */
+
+const routes = require("./routes");
 
 const cors = require(`cors`);
 app.use(express.json());
+app.use("/api", routes);
 app.use(
   cors({
     // Si aún no tenes deployado tu front en origin va la url local.
@@ -19,6 +21,6 @@ app.use((err, req, res, next) => {
   res.status(500).send(err.message);
 });
 
-db.sync({ force: false }).then(() => {
+db.sync({ force: true }).then(() => {
   app.listen(3000, () => console.log("Servidor escuchando en el puerto 3000"));
 });

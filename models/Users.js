@@ -5,21 +5,16 @@ class User extends Sequelize.Model {}
 
 User.init(
   {
-    nombre: {
+    name: {
       type: Sequelize.STRING,
       allowNull: false,
-    },
-    apellido: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-    fullName: {
-      type: Sequelize.VIRTUAL,
-      get() {
-        return `${this.nombre} ${this.apellido}`;
-      },
     },
     password: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+
+    repeatedPassword: {
       type: Sequelize.STRING,
       allowNull: false,
     },

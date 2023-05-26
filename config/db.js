@@ -18,5 +18,3 @@ const db = new Sequelize(
 );
 
 module.exports = db;
-
-/* postgres://tmdb_v2_user:ljEqxLJhMzYiYHWhnu5xvGtkRaGXVYsl@dpg-choc5cqk728h7ntq7vvg-a.oregon-postgres.render.com/tmdb_v2 */
