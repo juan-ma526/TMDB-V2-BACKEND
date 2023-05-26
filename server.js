@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const db = require("./config/db");
-/* const model = require("./models");
-const routes = require("./routes"); */
+const model = require("./models");
+/*const routes = require("./routes"); */
 
 const cors = require(`cors`);
 app.use(express.json());
