@@ -4,6 +4,7 @@
   "description": "Base de datos de app TMDB-V2",
   "main": "server.js",
   "scripts": {
+    "server": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "juan-ma526",
@@ -13,6 +14,8 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "nodemon": "^2.0.22",
+    "pg": "^8.11.0",
+    "pg-hstore": "^2.3.4",
     "sequelize": "^6.31.1"
   },
   "engines": {
