@@ -10,3 +10,5 @@ const registerUser = (req, res) => {
     .then((userCreated) => res.status(200).send(userCreated))
     .catch((err) => res.send(err));
 };
+
+module.exports = { allUser, registerUser };

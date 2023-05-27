@@ -1,9 +1,9 @@
 const Sequelize = require("sequelize");
 
 const db = new Sequelize(
-  "tmdb_v2",
-  "tmdb_v2_user",
-  "ljEqxLJhMzYiYHWhnu5xvGtkRaGXVYsl",
+  "tmdb_v2", // nombre de la database
+  "tmdb_v2_user", // user en render
+  "ljEqxLJhMzYiYHWhnu5xvGtkRaGXVYsl", // password que me da render
   {
     host: "dpg-choc5cqk728h7ntq7vvg-a.oregon-postgres.render.com",
     dialect: "postgres",
