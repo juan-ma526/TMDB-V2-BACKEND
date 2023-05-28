@@ -8,6 +8,7 @@ const routes = require("./routes");
 const cors = require(`cors`);
 app.use(express.json());
 app.use("/api", routes);
+
 app.use(
   cors({
     // Si aún no tenes deployado tu front en origin va la url local.
@@ -17,6 +18,7 @@ app.use(
     credentials: true,
   })
 );
+
 app.use((err, req, res, next) => {
   res.status(500).send(err.message);
 });

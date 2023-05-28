@@ -1,6 +1,7 @@
 const User = require("../models/Users");
 const bcryp = require("bcrypt");
 const { generateToken } = require("../config/token");
+const Movies = require("../models/Movies");
 
 const allUser = (req, res) => {
   User.findAll().then((user) => res.send(user));
@@ -51,4 +52,33 @@ const logoutUser = async (req, res) => {
   }
 };
 
-module.exports = { allUser, registerUser, loginUser, logoutUser };
+const addMovieFavorite = (req, res) => {
+  try {
+    const { userId, movie } = req.body;
+
+    Movies.create({
+      nameMovie: movie.nameMovie,
+      overview: movie.overview,
+      frontImage: movie.frontImage,
+    })
+      .then((movie) => {
+        User.findByPk(userId)
+          .then((user) => {
+            user.addMovie(movie);
+            res.sendStatus(200);
+          })
+          .catch((error) => console.log(error));
+      })
+      .catch((error) => console.log(error));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+module.exports = {
+  allUser,
+  registerUser,
+  loginUser,
+  logoutUser,
+  addMovieFavorite,
+};
