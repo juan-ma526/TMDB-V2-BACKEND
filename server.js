@@ -12,7 +12,7 @@ app.use(
   cors({
     // Si aún no tenes deployado tu front en origin va la url local.
     // Una vez que se deploye el front acá va esa url que te entrega.
-    origin: "https://tmdb-v2-alpha.vercel.app/",
+    origin: "https://tmdb-v2-alpha.vercel.app",
     methods: [`GET`, `POST`, `DELETE`, `OPTIONS`],
     credentials: true,
   })
