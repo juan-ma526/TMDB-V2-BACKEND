@@ -15,6 +15,9 @@ Movies.init(
     frontImage: {
       type: Sequelize.STRING,
     },
+    movieId: {
+      type: Sequelize.INTEGER,
+    },
   },
   { sequelize: db, modelName: "Movies" }
 );
