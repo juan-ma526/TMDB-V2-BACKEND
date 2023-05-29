@@ -18,6 +18,10 @@ app.use(
     credentials: true,
   })
 );
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 app.use((err, req, res, next) => {
   res.status(500).send(err.message);
