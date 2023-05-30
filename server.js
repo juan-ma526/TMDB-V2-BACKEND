@@ -1,20 +1,14 @@
 const express = require("express");
 const app = express();
+const cors = require(`cors`);
 const db = require("./config/db");
 const model = require("./models");
 const routes = require("./routes");
-const cors = require(`cors`);
 
 app.use(express.json());
 app.use("/api", routes);
 
-app.use(
-  cors({
-    origin: "https://tmdb-v2-alpha.vercel.app",
-    methods: [`GET`, `POST`, `DELETE`, `OPTIONS`],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use((err, req, res, next) => {
   res.status(500).send(err.message);
