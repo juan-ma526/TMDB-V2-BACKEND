@@ -8,23 +8,13 @@ const routes = require("./routes");
 app.use(express.json());
 app.use("/api", routes);
 
-app.use(cors());
-
-/* app.use(
+app.use(
   cors({
-    origin: "*",
-    methods: [`GET`, `POST`, `DELETE`, `OPTIONS`],
+    origin: ["https://tmdb-v2-alpha.vercel.app"],
+    allowedHeaders: ["Content-Type", "SameSite", "whitCredentials"],
     credentials: true,
   })
-); */
-
-/* app.use(
-  cors({
-    origin: "https://tmdb-v2-alpha.vercel.app",
-    methods: [`GET`, `POST`, `DELETE`, `OPTIONS`],
-    credentials: true,
-  })
-); */
+);
 
 app.use((err, req, res, next) => {
   res.status(500).send(err.message);
