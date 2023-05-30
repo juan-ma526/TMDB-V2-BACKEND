@@ -10,7 +10,7 @@ app.use("/api", routes);
 
 app.use(
   cors({
-    origin: ["https://tmdb-v2-alpha.vercel.app"],
+    origin: ["https://transcendent-tulumba-dd6ef9.netlify.app/"],
     allowedHeaders: ["Content-Type", "SameSite", "whitCredentials"],
     credentials: true,
   })
