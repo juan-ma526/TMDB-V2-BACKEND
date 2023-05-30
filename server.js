@@ -1,6 +1,6 @@
 const express = require("express");
-const app = express();
 const cors = require(`cors`);
+const app = express();
 const db = require("./config/db");
 const model = require("./models");
 const routes = require("./routes");
@@ -8,15 +8,15 @@ const routes = require("./routes");
 app.use(express.json());
 app.use("/api", routes);
 
-/* app.use(cors()); */
+app.use(cors());
 
-app.use(
+/* app.use(
   cors({
     origin: "*",
     methods: [`GET`, `POST`, `DELETE`, `OPTIONS`],
     credentials: true,
   })
-);
+); */
 
 /* app.use(
   cors({
