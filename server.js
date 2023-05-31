@@ -6,8 +6,6 @@ const model = require("./models");
 const routes = require("./routes");
 
 app.use(express.json());
-app.use("/api", routes);
-
 app.use(
   cors({
     origin: ["https://transcendent-tulumba-dd6ef9.netlify.app"],
@@ -15,6 +13,7 @@ app.use(
     credentials: true,
   })
 );
+app.use("/api", routes);
 
 app.use((err, req, res, next) => {
   res.status(500).send(err.message);
