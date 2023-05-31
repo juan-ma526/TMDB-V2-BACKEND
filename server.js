@@ -10,7 +10,7 @@ app.use("/api", routes);
 
 app.use(
   cors({
-    origin: ["https://transcendent-tulumba-dd6ef9.netlify.app/"],
+    origin: ["https://transcendent-tulumba-dd6ef9.netlify.app"],
     allowedHeaders: ["Content-Type", "withCredentials"],
     credentials: true,
   })
