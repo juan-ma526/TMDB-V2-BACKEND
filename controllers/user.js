@@ -5,8 +5,8 @@ const Movies = require("../models/Movies");
 
 const allUser = (req, res) => {
   User.findAll()
-    .then((user) => res.json(user))
-    .catch((error) => res.json(error));
+    .then((user) => res.send(user))
+    .catch((error) => res.send(error));
 };
 
 const registerUser = async (req, res) => {
