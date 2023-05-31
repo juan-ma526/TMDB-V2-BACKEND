@@ -4,7 +4,9 @@ const { generateToken } = require("../config/token");
 const Movies = require("../models/Movies");
 
 const allUser = (req, res) => {
-  User.findAll().then((user) => res.send(user));
+  User.findAll()
+    .then((user) => res.send(user))
+    .catch((error) => console.log(error));
 };
 
 const registerUser = async (req, res) => {
