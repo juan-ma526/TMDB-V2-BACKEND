@@ -8,7 +8,7 @@ const routes = require("./routes");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://tmdb-v2-two.vercel.app"],
+    origin: ["https://tmdb-v2-two.vercel.app", "http://localhost:5173"],
     allowedHeaders: ["Content-Type", "withCredentials"],
     credentials: true,
   })
