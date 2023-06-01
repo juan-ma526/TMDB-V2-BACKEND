@@ -8,7 +8,7 @@ const routes = require("./routes");
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://transcendent-tulumba-dd6ef9.netlify.app"],
+    origin: ["https://tmdb-v2-two.vercel.app"],
     allowedHeaders: ["Content-Type", "withCredentials"],
     credentials: true,
   })
