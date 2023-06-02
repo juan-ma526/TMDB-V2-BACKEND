@@ -79,7 +79,7 @@ const addMovieFavorite = (req, res) => {
 
 const getMovieFavorite = async (req, res) => {
   let foundUser;
-  const { userId } = req.body;
+  const userId = req.params.id;
   try {
     foundUser = await User.findOne({ where: { id: userId } });
   } catch (error) {

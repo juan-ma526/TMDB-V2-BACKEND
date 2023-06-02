@@ -14,7 +14,7 @@ router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.post("/logout", logoutUser);
 router.post("/addMovie", addMovieFavorite);
-router.get("/getMovie", getMovieFavorite);
+router.get("/getMovie/:id", getMovieFavorite);
 router.delete("/delete", removeFavorite);
 
 module.exports = router;
